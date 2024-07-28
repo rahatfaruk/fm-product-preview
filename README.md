@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github repo](https://github.com/rahatfaruk/fm-product-preview)
-- Live Site URL: [live site](https://rahatfaruk.github.io/rf-word-counter)
+- Live Site URL: [live site](https://rahatfaruk.github.io/fm-product-preview)
 
 ## My process
 
@@ -50,8 +50,9 @@ Users should be able to:
 ```html
   <!-- app container -->
   <main className="min-h-screen flex flex-col gap-6">
-    <!-- product-card -->
+    <!-- product-card container -->
     <div className="flex-1">
+      <!-- product-card -->
     </div>
 
     <footer>
@@ -60,7 +61,7 @@ Users should be able to:
 
 - If image container's height is large but img height is small then, image doesn't stretch to full-height even if we use height-100% to the img. To solve this, I wrapped the `img` in a `<figure>` element, set the `img` height to 100% (`h-full`), and controlled its size through the `figure` element.
 
-- I needed to use different images for small and large screens. On small screens, I hide the large image, and on large screens, I show the large image and hide the small one.
+- On small screens, the image and content box stack normally (top to bottom). On medium screens and above, I used flexbox and ensured both boxes take equal width using the `md:w-1/2` class, so the image and content-box stays side by side.
 
 ```html
   <!-- img container -->
@@ -69,24 +70,17 @@ Users should be able to:
   </figure>
 ```
 
-- On small screens, the image and content box stack normally (top to bottom). On medium screens and above, I used flexbox and ensured both boxes take equal width using the `md:w-1/2` class, so the image and content-box stays side by side.
+- I needed to use different images for small and large screens. On small screens, I hide the large image, and on large screens, I show the large image and hide the small one.
 
 ```html
-  <!-- product card -->
-  <div className="md:flex">
-    <!-- img container -->
-    <figure className="h-64 md:h-full md:w-1/2">
-      <img src="/product-mobile.jpg" className="md:hidden w-full h-full" alt="img" />
-      <img src="/product-desktop.jpg" className="hidden md:block w-full h-full" alt="img" />
-    </figure>
-
-    <div className="p-6 md:w-1/2">
-      <!-- content -->
-    </div>
-  </div>
+  <!-- img container -->
+  <figure className="h-64 md:h-full md:w-1/2">
+    <img src="/product-mobile.jpg" className="md:hidden w-full h-full" alt="img" />
+    <img src="/product-desktop.jpg" className="hidden md:block w-full h-full" alt="img" />
+  </figure>
 ```
 
--> new tailwind classes: `tracking-*` for letter-spacing
+- new tailwind classes: `tracking-*` for letter-spacing
 
 ### Useful resources
 
