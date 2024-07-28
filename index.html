@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.png">
+  <!-- custom font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- tailwind css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "dark-cyan": "hsl(158, 36%, 37%)",
+            "cream": "hsl(30, 38%, 92%)",
+            "very-dark-blue": "hsl(212, 21%, 14%)",
+            "dark-grayish-blue": "hsl(228, 12%, 48%)",
+          },
+          fontFamily: {
+            'fraunces': ["Fraunces", "serif"],
+            'montserrat': ["Montserrat", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="py-8 px-6 min-h-screen flex flex-col gap-6 bg-cream font-montserrat">
+    <!-- container: product-cart -->
+    <main class="flex-1 flex justify-center items-center">
+      <!-- card: product-cart -->
+      <div class="max-w-sm md:max-w-xl md:flex bg-white shadow-md rounded-lg text-[15px]">
+        <figure class="h-64 md:h-full md:w-1/2">
+          <!-- product img small-screen -->
+          <img src="./images/image-product-mobile.jpg" class="md:hidden w-full h-full object-cover object-top rounded-t-lg" alt="product image" />
+          <!-- product img large-screen -->
+          <img src="./images/image-product-desktop.jpg" class="hidden md:block w-full h-full object-cover object-top rounded-l-lg" alt="product image" />
+        </figure>
+        <div class="p-6 md:w-1/2">
+          <h3 class="text-dark-grayish-blue tracking-[.5rem]">PERFUME</h3>
+          <h2 class="mt-1 font-fraunces text-3xl font-bold text-very-dark-blue">Gabrielle Essence Eau De Parfum</h2>
+          <p class="mt-4 text-dark-grayish-blue">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+  
+          <p class="mt-4 gap-4 flex items-center">
+            <strong class="text-dark-cyan font-fraunces font-bold text-3xl">$149.99</strong>
+            <span class="line-through text-dark-grayish-blue">$169.99</span>
+          </p>
+  
+          <button class="mt-5 py-2.5 px-4 w-full flex items-center justify-center gap-3 rounded-md bg-dark-cyan text-white font-semibold hover:opacity-90 transition-opacity">
+            <img src="./images/icon-cart.svg" alt="cart icon" />
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer: attribution -->
+    <footer class="text-gray-500 text-sm text-center">
+      Challenge by 
+      <a href="https://www.frontendmentor.io?ref=challenge" class="text-sky-800 hover:underline" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://rahatfaruk.vercel.app" class="text-sky-800 hover:underline">Rahat Faruk</a>.
+    </footer>
+  </d>
+</body>
+
+</html>
